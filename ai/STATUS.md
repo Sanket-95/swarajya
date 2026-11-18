@@ -1,4 +1,4 @@
-# Status — updated 2026-11-18 by laptop A / Claude Opus 5.5
+# Status — updated 2026-11-18 by laptop A / Claude Opus 5.5 (D-013 workflow added)
 Phase: Bootstrap (Session 0 of SETUP_PROMPT.md) — complete
 Works now:
 - Repo layout from SETUP_PROMPT.md §2; `ai/` memory; `docs/` skeleton (story/history parts marked `TODO(Sanket)`).
@@ -9,6 +9,7 @@ Works now:
 In progress:
 - none
 Next task: SESSION 1 of SETUP_PROMPT.md — core engine: fixed-step 60 Hz loop with max-delta clamp, input (keyboard/mouse, pointer lock), quality presets Low/Medium/High (already in `shell/src/core/quality.ts`) + Adaptive Quality Governor, time-sliced scheduler (≤ 4 ms/frame), long-task PerformanceObserver, `Disposables` + `AssetRegistry` with `__swarajya.leakCheck()`, unit tests for scheduler/registry/governor, 2,000-cube stress toggle.
+Workflow: 3D assets are designed in the claude.ai browser chat and delivered as packs into `game/assets-incoming/`; Claude Code integrates them per `docs/assets/browser-asset-handoff.md` and never re-models them (D-013). Sessions 4–5 are now import/integrate sessions.
 Known issues:
 - Chrome throttles requestAnimationFrame (2–13 FPS) when its window is unfocused/occluded; the overlay then shows low FPS that is NOT render cost. Measure with the window focused and in front.
 - `docs/game/mavala-game-project-summary.md` was not provided in Session 0 (missing from the hand-off folder).

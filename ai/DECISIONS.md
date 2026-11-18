@@ -35,3 +35,6 @@ Context: Latest TypeScript is 7.0.2, but typescript-eslint 8.73.0 (latest) suppo
 
 ## D-012 — pnpm installed globally via npm (2026-11-18) — status: active
 Context: `corepack enable` failed with EPERM writing to `C:\Program Files\nodejs` (no admin rights). Decision: Install pnpm with `npm i -g pnpm`; pin the version via `packageManager` in `game/package.json`. Consequences: On a new laptop run `npm i -g pnpm` (or `corepack enable` from an admin shell).
+
+## D-013 — Assets designed in the browser chat, integrated by Claude Code (2026-11-18) — status: active
+Context: The claude.ai browser chat (Swarajya project) has 3D preview and export tools, and designing there saves Claude Code tokens. Decision: Characters and 3D assets are designed in the claude.ai browser chat (Swarajya project), not in Claude Code. The browser chat delivers ready asset packs; Claude Code only integrates them (validate, optimise, register, catalog), per `docs/assets/browser-asset-handoff.md`. Consequences: Claude Code must not redesign or re-model pack assets; problems go to `ai/HANDOFF.md` as "console → browser-chat: <what to fix>". SETUP_PROMPT.md Sessions 4–5 become import/integrate sessions; the standard rig, budgets and Asset Lab requirements are unchanged. (Requested as "D-011", but that number was already used for the TypeScript pin, so it was recorded as D-013.)

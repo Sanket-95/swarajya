@@ -6,3 +6,4 @@
 Top rules: no lag (visible-only rendering, pooling, no per-frame allocations, time-sliced loading),
 Shell/Mission isolation via SDK, all interactions through InteractionGuard, revered figures AI-only & dignified,
 no DB/saves yet (MemoryProgressStore), TypeScript strict, current stable libs, small prefixed commits.
+3D assets come from browser-chat packs (docs/assets/browser-asset-handoff.md) — integrate, don't re-model.

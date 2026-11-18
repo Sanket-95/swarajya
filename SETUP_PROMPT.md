@@ -360,6 +360,7 @@ Rules:
 - Completion → result screen.
 
 ### 3.5 Characters from Sanket's reference images
+> **Superseded in part by D-013:** characters and 3D assets are now designed in the claude.ai browser chat and delivered as packs; Claude Code only integrates them (`docs/assets/browser-asset-handoff.md`). The steps below describe what the browser chat produces; the rig, budgets, catalog and Asset Lab checks still apply in Claude Code.
 Sanket will place low-poly reference images (front/side/back if possible) in `docs/characters/references/<character-id>/`. Workflow:
 1. Read the images and write or extend the entry in `docs/characters/character-bible.md`: proportions, palette (hex), outfit parts, accessories, respect tag.
 2. Build a **procedural factory** `game/packages/shell/src/assets/characters/<id>.ts` using standard-rig bones, the shared palette and the triangle budget. Provide variants.
@@ -517,18 +518,17 @@ Game loop (fixed-step update at 60 Hz + render, max-delta clamp), input (keyboar
 Everything in section 3.3: lazy-loaded chunk, Settings menu entry, drag-and-drop import for all listed formats, budget validator, GLB export, screenshot.
 **Done when:** every catalog asset can be viewed in 360°; dropping an `.fbx` and an `.obj` shows them; the gameplay bundle does not contain FBX/OBJ loader code (check the build report).
 
-### SESSION 4 — Standard rig + Mavala
-- `standard-human-v1` bone factory + `docs/assets/standard-rig.md`.
-- Mavala procedural factory from the reference images (or from the bible if no images yet), with a detailed face.
-- 3 variants.
-- Clips: idle, walk, run, as `AnimationClip`s on bone names.
-- LOD1.
+### SESSION 4 — Standard rig + import the Mavala pack
+Characters are designed in the claude.ai browser chat and delivered as asset packs (D-013). In this session, **import and integrate** the Mavala pack from the browser chat per `docs/assets/browser-asset-handoff.md`. Do not re-model it.
+- `standard-human-v1` bone factory + `docs/assets/standard-rig.md` (the rig is still owned by the Shell; packs must match it).
+- Integrate the Mavala pack (`game/assets-incoming/<pack>/`): validate, optimise, register the factory (if any), merge catalog entries.
+- Required in the pack: a detailed face, 3 variants, clips idle/walk/run as `AnimationClip`s on standard bone names, LOD1. Anything missing or wrong → `console → browser-chat: …` in `ai/HANDOFF.md`.
 
-**Done when:** budget green in the Lab, clips play, GLB exported to `public/assets/shared/characters/mavala.glb` and reloads correctly in the Lab.
+**Done when:** budget green in the Lab, clips play, GLB at `public/assets/shared/characters/mavala.glb` loads correctly in the Lab, catalog updated, pack deleted from `assets-incoming/`.
 
-### SESSION 5 — Era asset set
-Ally soldier and enemy soldier (variants of the base body), villager male/female, horse (+ idle/walk), Konkan house, fort modular kit (wall, corner, bastion/buruj, gate, steps, tower, crenellation, flag), trees/palms/rocks (instanced), props (cart, barrel, crate, haystack, tulsi vrindavan, tent, fence).
-**Done when:** all budgets green, GLBs exported, catalog updated, LICENSES updated for anything third-party.
+### SESSION 5 — Import the era asset packs
+**Import and integrate** the era asset packs from the browser chat per `docs/assets/browser-asset-handoff.md` (no re-modelling in Claude Code). Expected content: ally soldier and enemy soldier (variants of the base body), villager male/female, horse (+ idle/walk), Konkan house, fort modular kit (wall, corner, bastion/buruj, gate, steps, tower, crenellation, flag), trees/palms/rocks (instanced), props (cart, barrel, crate, haystack, tulsi vrindavan, tent, fence). Missing items → request them via `ai/HANDOFF.md`.
+**Done when:** all budgets green, GLBs in `public/assets/shared/<class>/`, catalog updated, LICENSES updated for anything third-party, processed packs deleted from `assets-incoming/`.
 
 ### SESSION 6 — Shell + Mission SDK + start screen
 - `@swarajya/sdk` types.

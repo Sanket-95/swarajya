@@ -1,5 +1,7 @@
 # Asset Pipeline
 
+> Since D-013, assets are designed in the claude.ai browser chat and arrive as packs in `game/assets-incoming/`. Claude Code runs only the integrate steps below (optimise → catalog → Asset Lab → commit); see `browser-asset-handoff.md`.
+
 ```mermaid
 flowchart LR
   A[Reference images<br/>docs/characters/references] --> B{Procedural<br/>or file?}

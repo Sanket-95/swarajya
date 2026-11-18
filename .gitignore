@@ -12,6 +12,10 @@ game/assets-src/**
 !game/assets-src/README.md
 !game/assets-src/**/*.md
 
+# asset packs from the browser chat (raw, never committed; see docs/assets/browser-asset-handoff.md)
+game/assets-incoming/**
+!game/assets-incoming/README.md
+
 # env / editor / OS
 .env
 .env.*
