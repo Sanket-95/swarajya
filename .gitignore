@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# builds
+dist/
+*.tsbuildinfo
+coverage/
+
+# raw source art (keep small files like README/notes)
+game/assets-src/**
+!game/assets-src/README.md
+!game/assets-src/**/*.md
+
+# env / editor / OS
+.env
+.env.*
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# local Claude settings
+.claude/settings.local.json
