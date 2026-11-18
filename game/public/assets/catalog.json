@@ -1,4 +1,26 @@
 {
   "catalogVersion": 1,
-  "assets": []
+  "assets": [
+    {
+      "id": "char.mavala.base",
+      "class": "character",
+      "source": "file",
+      "file": "shared/characters/mavala.glb",
+      "rig": "standard-human-v1",
+      "lods": [0, 1],
+      "budgetTris": 3000,
+      "respectTag": "ally",
+      "tags": [
+        "human",
+        "soldier",
+        "mavala",
+        "player",
+        "rideable-rider",
+        "pagdi",
+        "talwar-sheathed",
+        "dhal-back"
+      ],
+      "variants": ["mavala.default", "mavala.red-sash", "mavala.elder"]
+    }
+  ]
 }
