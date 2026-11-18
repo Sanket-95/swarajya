@@ -10,7 +10,7 @@ Third-party tools, versions and Windows install steps. Assets go in `docs/assets
 | three | 0.187.0 | MIT | Engine |
 | vite | 8.3.8 | MIT | Dev server / bundler |
 | typescript | 6.0.3 | Apache-2.0 | Types (6.0.x pinned, see D-011) |
-| vitest | 5.1.1 | MIT | Tests |
+| vitest | 5.1.0 | MIT | Tests |
 | eslint | 10.15.0 | MIT | Lint |
 | typescript-eslint | 8.73.0 | MIT | TS lint rules |
 | prettier | 3.10.1 | MIT | Formatting |
