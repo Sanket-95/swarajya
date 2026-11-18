@@ -1,0 +1,20 @@
+{
+  "name": "@swarajya/sdk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Swarajya Mission SDK: types and MissionContext interfaces. No runtime dependency on the Shell.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@types/three": "0.187.0",
+    "three": "0.187.0"
+  }
+}

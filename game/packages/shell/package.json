@@ -1,0 +1,22 @@
+{
+  "name": "@swarajya/shell",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Swarajya Shell: the game container (engine, systems, UI, player, NPCs, assets, mission loader).",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@swarajya/sdk": "workspace:*",
+    "three": "0.187.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/three": "0.187.0",
+    "vite": "8.3.8"
+  }
+}

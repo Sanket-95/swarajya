@@ -1,0 +1,7 @@
+{
+  "name": "@swarajya/tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Node-only build and asset scripts (convert-model, optimize-glb, build-mission, validate-catalogs, export-procedural, perf-report). Added from Session 2.",
+  "type": "module"
+}
