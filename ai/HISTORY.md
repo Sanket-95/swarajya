@@ -1,5 +1,13 @@
 # History (append-only, newest on top)
 
+## 2026-11-19 00:55 — laptop A — Claude Opus 5.5 — Pack import: char-mavala v1.0.0 + temporary controller
+Did: Validated the pack (files present, GLB parses, only KHR_mesh_quantization, 22 standard-human-v1 bones, 6 clips, LOD0 2,930 / LOD1 964 tris = within budget, 1 material, no third-party content). Copied mavala.glb unchanged to public/assets/shared/characters/ (gltf-transform optimise skipped until the tools exist in Session 2; the file is already quantized, 425 kB). Merged the catalog entry; added a LICENSES row (original work). Added a temporary third-person controller (core/input.ts, player/motion.ts + tests, player/devPlayer.ts). Excluded assets-incoming/ from ESLint and Prettier.
+Files: game/public/assets/{catalog.json,shared/characters/mavala.glb}, game/packages/shell/{index.html,src/main.ts,src/core/input.ts,src/player/*}, game/eslint.config.js, game/.prettierignore, docs/assets/LICENSES.md
+Commits: see git log (assets:, shell:)
+Decisions: none
+Perf: 3 draw calls, 2,932 tris, heap ~26 MB. FPS not re-measured (Chrome throttles the automation window).
+Next: Session 1 (core engine); finish the pack in Sessions 2–3 (see HANDOFF).
+
 ## 2026-11-18 23:58 — laptop A — Claude Opus 5.5 — Session 0: Bootstrap repo, memory and docs
 Did: Cloned the empty repo; added SETUP_PROMPT.md; created the §2 layout; wrote all `ai/` files (RULES = §1 verbatim, DECISIONS D-001…D-012, GLOSSARY, prompts); wrote `docs/` (overview, world-story, respect guidelines, ch2 Panhala outline marked verify, mission template, character bible, asset + tech docs); created the pnpm workspace (TS 6.0 strict, ESLint 10 + typescript-eslint, Prettier, Vitest) with an SDK types stub and a Shell rendering an empty scene + dev overlay on Low. Checked versions with `npm view`; vitest pinned to 5.1.0 because 5.1.1 was released the same day and tripped pnpm's minimum-release-age check.
 Files: CLAUDE.md, AGENTS.md, README.md, .gitattributes, .gitignore, ai/*, docs/**, game/** (see commits)

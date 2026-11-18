@@ -4,3 +4,4 @@ coverage
 pnpm-lock.yaml
 public/vendor
 assets-src
+assets-incoming
